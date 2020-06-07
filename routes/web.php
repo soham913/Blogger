@@ -35,3 +35,8 @@ Route::get('Pages/about','PagesController@getAbout');
 Route::get('Pages/contact','PagesController@getContact');
 
 });
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

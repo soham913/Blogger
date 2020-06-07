@@ -15,7 +15,6 @@
         {{ Form::text('title',null, array('class'=>'form-control','required'=>'','Maxlength'=>'255')) }}
         {{ Form::label('body','Content:',array('class'=>'font-weight-bold'))}}
         {{ Form::textarea('body',null, array('class'=>'form-control','required'=>''))}}
-        <br>
         {{ Form:: submit('Create Post',array('class'=>'btn btn-success btn-lg btn-block'))}}
     {!! Form::close() !!}
 

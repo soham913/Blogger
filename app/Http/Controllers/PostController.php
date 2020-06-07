@@ -42,6 +42,7 @@ class PostController extends Controller
         $post = new Posts;
         $post->title = $request->title;
         $post->body = $request->body;
+        $post->user_id = auth()->user()->id;
         $post->save();
 
         Session::flash('Success','Post saved Successfully!');

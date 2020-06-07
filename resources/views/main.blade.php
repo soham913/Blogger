@@ -1,7 +1,7 @@
 <!doctype html>
 @include('Partials._head')
-<html lang="en">
-  <body>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<body>
       @include('Partials._navbar')
         <div class="container">
             @yield('content')
