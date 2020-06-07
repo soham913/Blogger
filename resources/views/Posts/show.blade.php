@@ -27,9 +27,13 @@
                     <dd>{{$PostData->updated_at}}</dd>
                 </dl>
                 <div class="row">
-                    <div class="col-sm-6">
-                        {!! Html::linkRoute('Posts.edit','Edit',array($PostData->id),array('class'=>'btn btn-primary')) !!}
-                        {!! Html::linkRoute('Posts.destroy','Delete',array($PostData->id),array('class'=>'btn btn-danger')) !!}                    </div>
+                    <div class="col-sm-4">
+                        {!! Html::linkRoute('Posts.edit','Edit',array($PostData->id),array('class'=>'btn btn-primary btn-block')) !!}
+                    </div>
+                <div class="col-sm-4">
+                        {!! Form::open(array('route'=>array('Posts.destroy',$PostData->id),'method'=>'DELETE')) !!}
+                        {{ Form::submit('Delete',array('class'=>'btn btn-danger btn-block')) }}
+                        {!! Form::close() !!}
                 </div>
             </div>
         </div>

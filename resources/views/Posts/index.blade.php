@@ -1,6 +1,8 @@
 @extends('main')
 
 @section('title','| View Posts')
+
+@include('Partials._messages')
     
 @section('content')
 
