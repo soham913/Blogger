@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Posts;
+use App\User;
 use Session;
 
 class PostController extends Controller
@@ -15,6 +16,8 @@ class PostController extends Controller
      */
     public function index()
     {
+        $user_id = auth()->user('id');
+        $user = User::find($user_id);
         $posts = Posts::all();
         return view('Posts.index')->with('Posts',$posts);
     }

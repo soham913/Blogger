@@ -1,20 +1,19 @@
 <?php
     namespace App\Http\Controllers;
+    use App\User;
 
     class PagesController extends Controller
     {
         public function getIndex()
         {
             $name = "There";
-            return view('Pages/welcome')->withShivi($name);
+            return view('Pages/welcome');
         }
 
         public function getAbout()
         {
-            $first = "Soham";
-            $last = "Sagade";
-            $full = $first . " " . $last;
-            return view('Pages/about')->withShivi($first);
+            $user = auth()->user()->name;
+            return view('Pages/about')->with('Name',$user);
         }
 
         public function getContact()
